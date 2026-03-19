@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CGP — Tell Us About You</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div id="page-loader">
+  <div class="loader-logo">CGP</div>
+  <div class="loader-dots">
+    <div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div>
+  </div>
+</div>
+
+<main class="form-page">
+  <div class="form-bg-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+
+  <div class="sf-wrapper">
+    <div class="sf-brand">
+      <div class="sf-brand-icon">🎓</div>
+      <div>
+        <div class="sf-brand-name">College Group Point</div>
+        <div class="sf-brand-sub">Your journey to the perfect college</div>
+      </div>
+    </div>
+
+    <div class="sf-card">
+      <div class="sf-progress">
+        <div class="sf-progress-track">
+          <div class="sf-progress-fill" id="sf-progress-fill"></div>
+        </div>
+        <div class="sf-step-label" id="sf-step-label">Step 1 of 10</div>
+      </div>
+
+      <div class="sf-viewport" id="sf-viewport">
+
+        <!-- ── Step 1: First Name ── -->
+        <div class="sf-slide active" data-step="1">
+          <div class="sf-slide-emoji">👋</div>
+          <h2 class="sf-slide-title">What's your first name?</h2>
+          <p class="sf-slide-sub">Let's start with the basics</p>
+          <div class="sf-field-group">
+            <input type="text" id="sf-firstName" class="sf-input" placeholder=" " autocomplete="given-name" />
+            <label for="sf-firstName" class="sf-label">First Name</label>
+          </div>
+        </div>
+
+        <!-- ── Step 2: Last Name ── -->
+        <div class="sf-slide" data-step="2">
+          <div class="sf-slide-emoji">📝</div>
+          <h2 class="sf-slide-title">And your last name?</h2>
+          <p class="sf-slide-sub">We'll use this for your profile</p>
+          <div class="sf-field-group">
+            <input type="text" id="sf-lastName" class="sf-input" placeholder=" " autocomplete="family-name" />
+            <label for="sf-lastName" class="sf-label">Last Name</label>
+          </div>
+        </div>
+
+        <!-- ── Step 3: Email + Send OTP ── -->
+        <div class="sf-slide" data-step="3">
+          <div class="sf-slide-emoji">📧</div>
+          <h2 class="sf-slide-title">Your email address?</h2>
+          <p class="sf-slide-sub">We'll send a 6-digit code to verify it's you</p>
+          <div class="sf-field-group">
+            <input type="email" id="sf-email" class="sf-input" placeholder=" " autocomplete="email" />
+            <label for="sf-email" class="sf-label">Email Address</label>
+          </div>
+          <button class="otp-send-btn" id="otp-send-btn" type="button">
+            <span class="otp-send-icon">✉️</span>
+            <span id="otp-send-text">Send Verification Code</span>
+          </button>
+          <div class="otp-status" id="otp-status"></div>
+        </div>
+
+        <!-- ── Step 3b: OTP Verify ── -->
+        <div class="sf-slide" data-step="3b">
+          <div class="sf-slide-emoji">🔐</div>
+          <h2 class="sf-slide-title">Enter the 6-digit code</h2>
+          <p class="sf-slide-sub" id="otp-sent-to-label">Code sent to your email</p>
+          <div class="otp-boxes" id="otp-boxes">
+            <input class="otp-box" type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" autocomplete="off" />
+            <input class="otp-box" type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" autocomplete="off" />
+            <input class="otp-box" type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" autocomplete="off" />
+            <input class="otp-box" type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" autocomplete="off" />
+            <input class="otp-box" type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" autocomplete="off" />
+            <input class="otp-box" type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" autocomplete="off" />
+          </div>
+          <div class="otp-verify-status" id="otp-verify-status"></div>
+          <div class="otp-resend-row">
+            <span class="otp-timer-label" id="otp-timer-label">Resend in <strong id="otp-countdown">30</strong>s</span>
+            <button class="otp-resend-btn" id="otp-resend-btn" type="button" disabled>Resend Code</button>
+          </div>
+          <!-- Demo hint shown in development — remove in production -->
+          <div class="otp-demo-hint" id="otp-demo-hint"></div>
+          <input type="hidden" id="sf-otp-actual" />
+          <input type="hidden" id="sf-email-verified" value="false" />
+        </div>
+
+        <!-- ── Step 4: Qualification — Card Picker ── -->
+        <div class="sf-slide" data-step="4">
+          <div class="sf-slide-emoji">🎒</div>
+          <h2 class="sf-slide-title">Highest qualification?</h2>
+          <p class="sf-slide-sub">Tap the one that matches your current level</p>
+          <input type="hidden" id="sf-qualification" />
+          <div class="qual-groups">
+            <div class="qual-group">
+              <div class="qual-group-label">🏫 Secondary (SSC)</div>
+              <div class="qual-cards">
+                <button class="qual-card" data-val="SSC – State Board" data-group="qual"><span class="qual-card-icon">📋</span><span class="qual-card-title">State Board</span><span class="qual-card-sub">SSC</span></button>
+                <button class="qual-card" data-val="SSC – CBSE" data-group="qual"><span class="qual-card-icon">🏫</span><span class="qual-card-title">CBSE</span><span class="qual-card-sub">SSC</span></button>
+                <button class="qual-card" data-val="SSC – ICSE" data-group="qual"><span class="qual-card-icon">📐</span><span class="qual-card-title">ICSE</span><span class="qual-card-sub">SSC</span></button>
+              </div>
+            </div>
+            <div class="qual-group">
+              <div class="qual-group-label">📚 Higher Secondary (HSC)</div>
+              <div class="qual-cards">
+                <button class="qual-card" data-val="HSC – Science" data-group="qual"><span class="qual-card-icon">🔬</span><span class="qual-card-title">Science</span><span class="qual-card-sub">HSC</span></button>
+                <button class="qual-card" data-val="HSC – Commerce" data-group="qual"><span class="qual-card-icon">📊</span><span class="qual-card-title">Commerce</span><span class="qual-card-sub">HSC</span></button>
+                <button class="qual-card" data-val="HSC – Arts" data-group="qual"><span class="qual-card-icon">🎨</span><span class="qual-card-title">Arts</span><span class="qual-card-sub">HSC</span></button>
+              </div>
+            </div>
+            <div class="qual-group">
+              <div class="qual-group-label">🎓 Degree</div>
+              <div class="qual-cards" style="justify-content:center;">
+                <button class="qual-card" data-val="Bachelor Degree" data-group="qual"><span class="qual-card-icon">🎓</span><span class="qual-card-title">Bachelor</span><span class="qual-card-sub">Undergraduate</span></button>
+                <button class="qual-card" data-val="Master Degree" data-group="qual"><span class="qual-card-icon">🏅</span><span class="qual-card-title">Master</span><span class="qual-card-sub">Postgraduate</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Step 5: Gender ── -->
+        <div class="sf-slide" data-step="5">
+          <div class="sf-slide-emoji">🙋</div>
+          <h2 class="sf-slide-title">How do you identify?</h2>
+          <p class="sf-slide-sub">Select your preferred pronouns</p>
+          <div class="sf-choice-grid">
+            <button class="sf-choice-btn" data-group="gender" data-val="He/Him">
+              <span class="sf-choice-icon">👦</span>
+              <span class="sf-choice-label">Male (He/Him)</span>
+            </button>
+            <button class="sf-choice-btn" data-group="gender" data-val="She/Her">
+              <span class="sf-choice-icon">👧</span>
+              <span class="sf-choice-label">Female (She/Her)</span>
+            </button>
+          </div>
+          <input type="hidden" id="sf-gender" />
+        </div>
+
+        <!-- ── Step 6: State (before city) ── -->
+        <div class="sf-slide" data-step="6">
+          <div class="sf-slide-emoji">🗺️</div>
+          <h2 class="sf-slide-title">Which state are you from?</h2>
+          <p class="sf-slide-sub">Select your home state in India</p>
+          <div class="sf-field-group">
+            <select id="sf-state" class="sf-input sf-select">
+              <option value="" disabled selected>Select state</option>
+              <option>Andhra Pradesh</option><option>Arunachal Pradesh</option>
+              <option>Assam</option><option>Bihar</option><option>Chhattisgarh</option>
+              <option>Goa</option><option>Gujarat</option><option>Haryana</option>
+              <option>Himachal Pradesh</option><option>Jharkhand</option>
+              <option>Karnataka</option><option>Kerala</option>
+              <option>Madhya Pradesh</option><option>Maharashtra</option>
+              <option>Manipur</option><option>Meghalaya</option><option>Mizoram</option>
+              <option>Nagaland</option><option>Odisha</option><option>Punjab</option>
+              <option>Rajasthan</option><option>Sikkim</option><option>Tamil Nadu</option>
+              <option>Telangana</option><option>Tripura</option>
+              <option>Uttar Pradesh</option><option>Uttarakhand</option>
+              <option>West Bengal</option><option>Delhi (NCT)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- ── Step 7: City (after state) ── -->
+        <div class="sf-slide" data-step="7">
+          <div class="sf-slide-emoji">🏙️</div>
+          <h2 class="sf-slide-title">Which city are you from?</h2>
+          <p class="sf-slide-sub">Enter your city in <strong id="sf-state-hint">your state</strong></p>
+          <div class="sf-field-group">
+            <input type="text" id="sf-city" class="sf-input" placeholder=" " autocomplete="address-level2" />
+            <label for="sf-city" class="sf-label">City / Area</label>
+          </div>
+        </div>
+
+        <!-- ── Step 8: Country ── -->
+        <div class="sf-slide" data-step="8">
+          <div class="sf-slide-emoji">🌏</div>
+          <h2 class="sf-slide-title">Your country?</h2>
+          <p class="sf-slide-sub">Where are you currently based?</p>
+          <div class="sf-field-group">
+            <input type="text" id="sf-country" class="sf-input" placeholder=" " autocomplete="country-name" value="India" />
+            <label for="sf-country" class="sf-label">Country</label>
+          </div>
+        </div>
+
+        <!-- ── Step 9: Summary ── -->
+        <div class="sf-slide" data-step="9">
+          <div class="sf-slide-emoji" style="font-size:3rem">🎉</div>
+          <h2 class="sf-slide-title">You're all set!</h2>
+          <p class="sf-slide-sub">We're excited to help you find your perfect college match.</p>
+          <div class="sf-summary" id="sf-summary"></div>
+        </div>
+
+      </div><!-- /sf-viewport -->
+
+      <div class="sf-nav">
+        <button class="btn btn-secondary sf-back-btn" id="sf-back" style="display:none;">← Back</button>
+        <button class="btn btn-primary sf-next-btn" id="sf-next">Continue →</button>
+      </div>
+
+    </div><!-- /sf-card -->
+  </div><!-- /sf-wrapper -->
+</main>
+
+<script src="js/script.js"></script>
+</body>
+</html>

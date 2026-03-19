@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CGP — FAQ</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div id="page-loader">
+  <div class="loader-logo">CGP</div>
+  <div class="loader-dots">
+    <div class="loader-dot"></div>
+    <div class="loader-dot"></div>
+    <div class="loader-dot"></div>
+  </div>
+</div>
+
+<nav class="navbar">
+  <a href="index.html" class="nav-logo"><span>C</span> CGP</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="colleges.html">Colleges</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="faq.html" class="active">FAQ</a></li>
+  </ul>
+  <div class="nav-user-pill" id="nav-user-pill" style="display:none;">
+    <span class="nav-user-avatar">👤</span>
+    <span class="nav-user-name" id="nav-user-name"></span>
+  </div>
+  <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<nav class="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="colleges.html">Colleges</a>
+  <a href="about.html">About</a>
+  <a href="faq.html">FAQ</a>
+  <div class="mobile-user-row" id="mobile-user-row" style="display:none;">
+    <span id="mobile-user-name-label"></span>
+    <button class="btn btn-secondary" style="padding:0.4rem 1rem;font-size:0.8rem;" onclick="openProfileModal()">Profile</button>
+  </div>
+</nav>
+
+<div class="faq-page">
+
+  <section class="faq-hero">
+    <div class="section-badge reveal">❓ FAQ</div>
+    <h1 class="section-title reveal" style="max-width:520px;margin:0.75rem auto 1rem;">Frequently Asked Questions</h1>
+    <p class="section-subtitle reveal">Have questions about CGP? We've got answers.</p>
+  </section>
+
+  <section class="section" style="background:var(--warm-white)">
+    <div class="container">
+      <div class="faq-list">
+
+        <div class="faq-item reveal">
+          <div class="faq-question">
+            <span class="faq-question-text">How does CGP help students find colleges?</span>
+            <div class="faq-chevron">▼</div>
+          </div>
+          <div class="faq-answer"><p>CGP uses a step-by-step College Finder system where you tell us your education level, preferred location, stream, and subject interests. Based on your answers, we instantly recommend colleges that best match your profile — from top Indian institutions to global universities.</p></div>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-1">
+          <div class="faq-question">
+            <span class="faq-question-text">Is CGP free to use?</span>
+            <div class="faq-chevron">▼</div>
+          </div>
+          <div class="faq-answer"><p>Yes! CGP is 100% free for all students. There are no subscription plans, no hidden charges, and no premium tiers. Every feature — from the College Finder to our guides — is completely accessible at no cost.</p></div>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-2">
+          <div class="faq-question">
+            <span class="faq-question-text">Can I find international universities on CGP?</span>
+            <div class="faq-chevron">▼</div>
+          </div>
+          <div class="faq-answer"><p>Absolutely. CGP covers universities across 50+ countries worldwide, including top institutions in the USA, UK, Canada, Australia, Germany, and many more. Simply choose "Worldwide" in the location step of our College Finder to see international recommendations.</p></div>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-3">
+          <div class="faq-question">
+            <span class="faq-question-text">Do you help with course selection?</span>
+            <div class="faq-chevron">▼</div>
+          </div>
+          <div class="faq-answer"><p>Yes! One of our core services is Course Guidance. We help you understand which courses align with your stream, interests, and long-term career goals. Whether you're choosing between B.Sc. and B.Tech, or MBA vs. MCA — we provide clear comparisons and guidance.</p></div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-question">
+            <span class="faq-question-text">How do I contact CGP for support?</span>
+            <div class="faq-chevron">▼</div>
+          </div>
+          <div class="faq-answer"><p>You can reach us at <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c4aca1a8a8ab84a7a3b4eaadaa">[email&#160;protected]</a></strong> or call us at <strong>+91 12345 67890</strong> during business hours (Mon–Sat, 9 AM to 6 PM IST). We typically respond to all email queries within 24 hours.</p></div>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-1">
+          <div class="faq-question">
+            <span class="faq-question-text">What education levels does CGP cover?</span>
+            <div class="faq-chevron">▼</div>
+          </div>
+          <div class="faq-answer"><p>CGP covers all major education levels — Junior College (Class 11–12), Bachelor's Degree programs, Master's Degree programs, and Professional Courses. Whether you're just finishing Class 10 or planning a postgraduate degree, CGP has resources for you.</p></div>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-2">
+          <div class="faq-question">
+            <span class="faq-question-text">Is my personal data safe with CGP?</span>
+            <div class="faq-chevron">▼</div>
+          </div>
+          <div class="faq-answer"><p>Yes, your privacy is our top priority. We only collect the minimum information needed to personalize your experience. We never sell your data to third parties. Your information is stored securely and you can request deletion at any time by contacting us.</p></div>
+        </div>
+
+      </div><!-- /faq-list -->
+
+      <div style="text-align:center;margin-top:4rem;" class="reveal">
+        <p style="color:var(--text-soft);margin-bottom:1.5rem;font-size:0.95rem;">Still have questions? We'd love to help.</p>
+        <a href="/cdn-cgi/l/email-protection#d6beb3babab996b5b1a6f8bfb8" class="btn btn-primary">📧 Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /faq-page -->
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo"><span>C</span> College Group Point</div>
+      <p>Your trusted partner in finding the perfect college across India and worldwide.</p>
+      <div class="footer-social">
+        <div class="social-icon">f</div><div class="social-icon">in</div>
+        <div class="social-icon">𝕏</div><div class="social-icon">Li</div>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Quick Links</h4><a href="index.html">Home</a><a href="colleges.html">Colleges</a><a href="about.html">About Us</a><a href="faq.html">FAQ</a></div>
+    <div class="footer-col"><h4>Services</h4><a href="#">College Discovery</a><a href="#">Course Guidance</a><a href="#">Study Abroad</a><a href="#">Career Advice</a></div>
+    <div class="footer-col"><h4>Contact</h4><a href="/cdn-cgi/l/email-protection#670f020b0b0827040017490e09"><span class="__cf_email__" data-cfemail="e58d8089898aa5868295cb8c8b">[email&#160;protected]</span></a><a href="tel:+911234567890">+91 12345 67890</a><a href="#">Mumbai, India</a></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 College Group Point (CGP). All Rights Reserved.</p>
+    <p style="font-size:0.78rem;color:rgba(255,255,255,0.3)">Built with ♥ for students</p>
+  </div>
+</footer>
+
+<!-- Profile Modal -->
+<div class="modal-overlay" id="profile-modal" style="display:none;">
+  <div class="modal-box profile-modal-box">
+    <button class="modal-close" onclick="closeProfileModal()">✕</button>
+    <div class="profile-avatar-big">👤</div>
+    <h3 class="modal-title" id="profile-modal-name">Your Profile</h3>
+    <div class="profile-details" id="profile-details"></div>
+    <div class="profile-modal-footer">
+      <button class="btn btn-primary" style="background:linear-gradient(135deg,#e74c3c,#c0392b);box-shadow:0 4px 20px rgba(231,76,60,0.3);" onclick="openLogoutConfirm()">🚪 Logout</button>
+    </div>
+  </div>
+</div>
+<div class="modal-overlay" id="logout-modal" style="display:none;">
+  <div class="modal-box">
+    <div class="modal-icon">⚠️</div>
+
+  </div>
+</div>
+
+<button id="go-top" aria-label="Go to top">↑</button>
+<script src="js/script.js"></script>
+</body>
+</html>

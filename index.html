@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CGP — College Group Point | Find Your Perfect College</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div id="page-loader">
+  <div class="loader-logo">CGP</div>
+  <div class="loader-dots">
+    <div class="loader-dot"></div>
+    <div class="loader-dot"></div>
+    <div class="loader-dot"></div>
+  </div>
+</div>
+
+<nav class="navbar">
+  <a href="index.html" class="nav-logo"><span>C</span> CGP</a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="colleges.html">Colleges</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+  </ul>
+  <div class="nav-user-pill" id="nav-user-pill" style="display:none;">
+    <span class="nav-user-avatar">👤</span>
+    <span class="nav-user-name" id="nav-user-name"></span>
+  </div>
+  <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<nav class="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="colleges.html">Colleges</a>
+  <a href="about.html">About</a>
+  <a href="faq.html">FAQ</a>
+  <div class="mobile-user-row" id="mobile-user-row" style="display:none;">
+    <span id="mobile-user-name-label"></span>
+    <button class="btn btn-secondary" style="padding:0.4rem 1rem;font-size:0.8rem;" onclick="openProfileModal()">Profile</button>
+  </div>
+</nav>
+
+<!-- ====== HERO — Centered, clean ====== -->
+<section class="hero hero-centered">
+  <div class="hero-bg-shapes">
+    <div class="hero-shape hero-shape-1"></div>
+    <div class="hero-shape hero-shape-2"></div>
+    <div class="hero-shape hero-shape-3"></div>
+  </div>
+  <div class="hero-content hero-content-centered">
+    <div class="hero-text hero-text-centered">
+      <div class="badge"><span>✨</span> India's Trusted College Discovery Platform</div>
+      <h1>Find Your <em>Perfect</em><br />College Today</h1>
+      <p>CGP helps students across India and worldwide discover the right college for Junior College, Bachelor's, and Master's programs — all in one place.</p>
+      <div class="hero-cta">
+        <a href="colleges.html" class="btn btn-primary">🔍 Explore Colleges</a>
+        <a href="about.html" class="btn btn-secondary">Learn More</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat-item"><strong>500+</strong><span>Colleges</span></div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat-item"><strong>50+</strong><span>Countries</span></div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat-item"><strong>10K+</strong><span>Students Helped</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== REVIEWS SLIDER ====== -->
+<section class="section reviews-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-badge">⭐ Student Reviews</div>
+      <h2 class="section-title">What Students Are Saying</h2>
+      <p class="section-subtitle">Thousands of students found their dream college with CGP.</p>
+    </div>
+    <div class="reviews-container">
+      <div class="review-slide active">
+        <div class="review-card">
+          <div class="review-quote">"</div>
+          <p class="review-text">CGP helped me find my dream university. The process was incredibly smooth and the recommendations were spot on for my profile.</p>
+          <div class="review-author">
+            <div class="review-avatar" style="background:linear-gradient(135deg,var(--blue),var(--teal))">PK</div>
+            <div><div class="review-author-name">Priya Kapoor</div><div class="review-author-role">Now at Delhi University</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="review-slide">
+        <div class="review-card">
+          <div class="review-quote">"</div>
+          <p class="review-text">Very easy platform for college research. I was confused about which stream to pick, and CGP guided me to the right path.</p>
+          <div class="review-author">
+            <div class="review-avatar" style="background:linear-gradient(135deg,var(--teal),var(--purple))">RS</div>
+            <div><div class="review-author-name">Rohan Sharma</div><div class="review-author-role">Now at IIT Bombay</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="review-slide">
+        <div class="review-card">
+          <div class="review-quote">"</div>
+          <p class="review-text">Best place to discover universities worldwide. I got into University of Toronto thanks to CGP's international college guide.</p>
+          <div class="review-author">
+            <div class="review-avatar" style="background:linear-gradient(135deg,var(--purple),var(--blue))">AM</div>
+            <div><div class="review-author-name">Ananya Mehta</div><div class="review-author-role">Now at University of Toronto</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="review-slide">
+        <div class="review-card">
+          <div class="review-quote">"</div>
+          <p class="review-text">I never thought finding the right college could be this simple. CGP's step-by-step finder is an absolute game changer.</p>
+          <div class="review-author">
+            <div class="review-avatar" style="background:linear-gradient(135deg,#FF9A9E,#FAD0C4)">VN</div>
+            <div><div class="review-author-name">Vikram Nair</div><div class="review-author-role">Now at Mumbai University</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="review-controls">
+        <button class="review-btn" id="review-prev">←</button>
+        <div class="review-dots">
+          <div class="review-dot active"></div>
+          <div class="review-dot"></div>
+          <div class="review-dot"></div>
+          <div class="review-dot"></div>
+        </div>
+        <button class="review-btn" id="review-next">→</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== OUR SERVICES ====== -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-badge">🛠️ What We Offer</div>
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-subtitle">Everything you need to make an informed college decision.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon">🔍</div>
+        <h3>College Discovery</h3>
+        <p>Browse and discover the best colleges and universities across India and worldwide using our intelligent recommendation system.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon">📚</div>
+        <h3>Course Guidance</h3>
+        <p>Get expert guidance on choosing the right course and stream based on your academic interests, strengths, and career goals.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-icon">✈️</div>
+        <h3>Study Abroad Assistance</h3>
+        <p>Explore international universities with step-by-step support for applications, visas, and everything in between.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-4">
+        <div class="service-icon">🚀</div>
+        <h3>Career Path Advice</h3>
+        <p>Understand how each college and course maps to your long-term career path, industry outlook, and earning potential.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== ABOUT PREVIEW ====== -->
+<section class="section about-preview">
+  <div class="container">
+    <div class="about-preview-grid">
+      <div class="about-preview-text reveal-left">
+        <div class="section-badge">🏫 About CGP</div>
+        <h2>We Make College Discovery Simple &amp; Stress-Free</h2>
+        <p>CGP was built with one mission — to help every student find a college that truly fits their aspirations, budget, and career goals. No confusion, no overwhelm.</p>
+        <div class="about-features">
+          <div class="about-feature"><div class="about-feature-icon">✓</div>Trusted and verified college information</div>
+          <div class="about-feature"><div class="about-feature-icon">✓</div>Covers India &amp; 50+ countries worldwide</div>
+          <div class="about-feature"><div class="about-feature-icon">✓</div>Free platform — no hidden fees</div>
+          <div class="about-feature"><div class="about-feature-icon">✓</div>Student-first, always</div>
+        </div>
+        <a href="about.html" class="btn btn-secondary">Read More →</a>
+      </div>
+      <div class="reveal-right">
+        <div class="about-visual-card">
+          <div style="font-weight:700;font-size:1rem;color:var(--text);margin-bottom:1.25rem;">How CGP Works</div>
+          <div class="about-visual-steps">
+            <div class="about-step"><div class="about-step-num">1</div><div class="about-step-text"><strong>Tell Us About You</strong><span>Fill in your education level and interests</span></div></div>
+            <div class="about-step"><div class="about-step-num">2</div><div class="about-step-text"><strong>Explore Recommendations</strong><span>Get matched with the best colleges</span></div></div>
+            <div class="about-step"><div class="about-step-num">3</div><div class="about-step-text"><strong>Compare Options</strong><span>View details, location, and programs</span></div></div>
+            <div class="about-step"><div class="about-step-num">4</div><div class="about-step-text"><strong>Choose Your College</strong><span>Make your decision with confidence</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CTA ====== -->
+<section class="college-cta reveal">
+  <div style="position:relative;z-index:1;">
+    <h2>Ready to Find Your Perfect College?</h2>
+    <p>Use our smart College Finder to get personalized recommendations based on your goals, stream, and location.</p>
+    <a href="colleges.html" class="btn btn-white">🎓 Find Colleges Now</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo"><span>C</span> College Group Point</div>
+      <p>Your trusted partner in finding the perfect college across India and worldwide.</p>
+      <div class="footer-social">
+        <div class="social-icon">f</div><div class="social-icon">in</div>
+        <div class="social-icon">𝕏</div><div class="social-icon">Li</div>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Quick Links</h4><a href="index.html">Home</a><a href="colleges.html">Colleges</a><a href="about.html">About Us</a><a href="faq.html">FAQ</a></div>
+    <div class="footer-col"><h4>Services</h4><a href="#">College Discovery</a><a href="#">Course Guidance</a><a href="#">Study Abroad</a><a href="#">Career Advice</a></div>
+    <div class="footer-col"><h4>Contact</h4><a href="/cdn-cgi/l/email-protection#2f474a4343406f4c485f014641"><span class="__cf_email__" data-cfemail="5a323f3636351a393d2a743334">[email&#160;protected]</span></a><a href="tel:+911234567890">+91 12345 67890</a><a href="#">Mumbai, India</a></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 College Group Point (CGP). All Rights Reserved.</p>
+    <p style="font-size:0.78rem;color:rgba(255,255,255,0.3)">Built with ♥ for students</p>
+  </div>
+</footer>
+
+<!-- Profile Modal -->
+<div class="modal-overlay" id="profile-modal" style="display:none;">
+  <div class="modal-box profile-modal-box">
+    <button class="modal-close" onclick="closeProfileModal()">✕</button>
+    <div class="profile-avatar-big">👤</div>
+    <h3 class="modal-title" id="profile-modal-name">Your Profile</h3>
+    <div class="profile-details" id="profile-details"></div>
+    <div class="profile-modal-footer">
+      <button class="btn btn-primary" style="background:linear-gradient(135deg,#e74c3c,#c0392b);box-shadow:0 4px 20px rgba(231,76,60,0.3);" onclick="openLogoutConfirm()">🚪 Logout</button>
+    </div>
+  </div>
+</div>
+<div class="modal-overlay" id="logout-modal" style="display:none;">
+  <div class="modal-box">
+    <div class="modal-icon">⚠️</div>
+    <h3 class="modal-title">Are you sure?</h3>
+    <p class="modal-text">Logging out will remove all your saved details.<br/>Do you want to continue?</p>
+
+  </div>
+</div>
+
+<button id="go-top" aria-label="Go to top">↑</button>
+<script src="js/script.js"></script>
+</body>
+</html>
